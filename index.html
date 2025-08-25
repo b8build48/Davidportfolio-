@@ -1,0 +1,53 @@
+<DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width,initial scale=1.0, maximum-scale=1.0, user-scaleable=no">
+    <title>index</title>
+  </head>
+   <div class="spinner"></div>
+  <style>
+   .spinner{
+     width:100px;
+     height:100px;
+      border-radius: 50%;
+     left:84px;
+     position: relative;
+            }
+   .spinner::before{
+     content:'';
+     position: absolute;
+     width:84px;
+     height:84px;
+     transform: rotate(0deg);
+   z-index:-9;
+     animation: roll 3s linear infinite;
+     border-top: 4px dotted blue;
+     border-left: 4px dotted white;
+     border-right: 4px dotted green;
+     border-bottom: 4px dotted red;
+     border-radius:50%;
+     
+   }
+  @keyframes roll {
+    0%{
+      transform:rotate(0deg);
+    }
+    100%{
+      transform:rotate(360deg);
+    }
+  }
+  body{
+    background: black;
+  }
+  </style>
+  <script>
+  setTimeout(()=>{
+  
+    document.querySelector(".spinner").classList.add("fade-out");
+    setTimeout(() =>{
+    document.querySelector(".spinner").remove();
+      window.location.href = "my portfolio.html"
+  },200);
+  },2000 );
+  </script>
